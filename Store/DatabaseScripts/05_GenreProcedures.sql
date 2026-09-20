@@ -1,0 +1,65 @@
+USE HomeLibrary;
+GO
+
+CREATE OR ALTER PROCEDURE GenreInsert
+    @Name NVARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO Genre (Name)
+    VALUES (@Name);
+END;
+GO
+
+
+CREATE OR ALTER PROCEDURE GenreUpdate
+    @Id BIGINT,
+    @Name NVARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    UPDATE Genre
+    SET
+        Name = @Name
+    WHERE Id = @Id;
+END;
+GO
+
+
+CREATE OR ALTER PROCEDURE GenreDelete
+    @Id BIGINT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DELETE FROM Genre
+    WHERE Id = @Id;
+END;
+GO
+
+
+CREATE OR ALTER PROCEDURE GenreGetById
+    @Id BIGINT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT Id, Name
+    FROM Genre
+    WHERE Id = @Id;
+END;
+GO
+
+
+CREATE OR ALTER PROCEDURE GenreGetAll
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT Id, Name
+    FROM Genre
+    ORDER BY Name;
+END;
+GO
