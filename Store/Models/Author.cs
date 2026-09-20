@@ -16,4 +16,5 @@ public class Author
 
     public string Description { get; set; }
 
+    public string FullName => $"{LastName} {FirstName} {MiddleName}".Trim();
 }

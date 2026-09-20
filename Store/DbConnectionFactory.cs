@@ -16,8 +16,7 @@ public class DbConnectionFactory : IDbConnectionFactory
 
         if (string.IsNullOrWhiteSpace(_connectionString))
         {
-            throw new InvalidOperationException(
-                "DB_CONNECTION_STRING is not configured.");
+            throw new InvalidOperationException("DB_CONNECTION_STRING is not configured.");
         }
     }
 
