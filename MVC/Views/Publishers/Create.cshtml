@@ -1,0 +1,16 @@
+﻿@model Store.Models.Publisher
+
+<h2>Добавить издательство</h2>
+
+<form asp-action="Create" method="post">
+
+    <input asp-for="ShortName" placeholder="Короткое название" class="form-control" />
+    <input asp-for="FullName" placeholder="Полное название" class="form-control" />
+    <input asp-for="Address" placeholder="Адрес" class="form-control" />
+    <input asp-for="Phone" placeholder="Телефон" class="form-control" />
+    <input asp-for="Email" placeholder="Email" class="form-control" />
+    <input asp-for="Website" placeholder="Сайт" class="form-control" />
+
+    <button class="btn btn-success">Сохранить</button>
+
+</form>

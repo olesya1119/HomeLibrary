@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Store.Models.Author>
+
+<h2>Авторы</h2>
+
+<a class="btn btn-success" asp-action="Create">Добавить</a>
+
+<table class="table">
+    <tr>
+        <th>ФИО</th>
+        <th>Дата рождения</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FullName</td>
+            <td>@item.BirthDate?.ToShortDateString()</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Просмотр</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Изменить</a>
+                <form asp-action="Delete" asp-route-id="@item.Id" method="post" style="display:inline">
+                    <button class="btn btn-link">Удалить</button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>

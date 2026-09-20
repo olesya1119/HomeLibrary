@@ -1,0 +1,10 @@
+﻿@model Store.Models.Genre
+
+<h2>Добавить жанр</h2>
+
+<form asp-action="Create" method="post">
+    <input asp-for="Name" class="form-control" placeholder="Название" />
+
+    <br />
+    <button class="btn btn-success">Сохранить</button>
+</form>

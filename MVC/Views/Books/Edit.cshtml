@@ -1,0 +1,62 @@
+﻿@model Store.Models.BookDetails
+
+<h2>Редактировать книгу</h2>
+
+<form asp-action="Edit" method="post">
+
+    <input asp-for="Id" type="hidden" />
+
+    <input asp-for="Title" class="form-control" />
+
+    <textarea asp-for="Description" class="form-control"></textarea>
+
+    <input asp-for="PublicationYear" class="form-control" />
+
+    <input asp-for="ISBN" class="form-control" />
+
+    <input asp-for="PagesNumber" class="form-control" />
+
+
+    <select asp-for="PublisherId" class="form-control">
+
+        @foreach (var publisher in ViewBag.Publishers)
+        {
+            <option value="@publisher.Id">@publisher.Name</option>
+        }
+
+    </select>
+
+
+    <h4>Авторы</h4>
+
+    @foreach (var author in ViewBag.Authors)
+    {
+        var selected = Model.AuthorsList.Any(x => x.Id == author.Id);
+
+        <div>
+            <input type="checkbox" name="authorIds" value="@author.Id" checked="@selected" />
+            @author.FullName
+        </div>
+    }
+
+
+    <h4>Жанры</h4>
+
+    @foreach (var genre in ViewBag.Genres)
+    {
+        var selected = Model.GenresList.Any(x => x.Id == genre.Id);
+
+        <div>
+            <input type="checkbox" name="genreIds" value="@genre.Id" checked="@selected" />
+            @genre.Name
+        </div>
+    }
+
+
+    <textarea asp-for="ContentsTable" class="form-control"></textarea>
+
+    <br />
+
+    <button class="btn btn-primary">Сохранить</button>
+
+</form>

@@ -1,0 +1,56 @@
+﻿@model Store.Models.BookDetails
+
+<h2>@Model.Title</h2>
+
+<table class="table">
+    <tr>
+        <td>Описание</td>
+        <td>@Model.Description</td>
+    </tr>
+    <tr>
+        <td>Год</td>
+        <td>@Model.PublicationYear</td>
+    </tr>
+    <tr>
+        <td>ISBN</td>
+        <td>@Model.ISBN</td>
+    </tr>
+    <tr>
+        <td>Страниц</td>
+        <td>@Model.PagesNumber</td>
+    </tr>
+    <tr>
+        <td>Издатель</td>
+        <td>@Model.PublisherName</td>
+    </tr>
+</table>
+
+
+<h4>Авторы</h4>
+
+<ul>
+    @foreach (var author in Model.AuthorsList)
+    {
+        <li>@author.FullName</li>
+    }
+</ul>
+
+
+<h4>Жанры</h4>
+
+<ul>
+    @foreach (var genre in Model.GenresList)
+    {
+        <li>@genre.Name</li>
+    }
+</ul>
+
+
+<h4>Оглавление</h4>
+
+<div>
+    @Model.ContentsTable
+</div>
+
+
+<a asp-action="Edit" asp-route-id="@Model.Id">Изменить</a>

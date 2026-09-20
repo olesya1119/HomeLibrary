@@ -1,0 +1,18 @@
+﻿@model Store.Models.Publisher
+
+<h2>Редактировать</h2>
+
+<form asp-action="Edit" method="post">
+
+    <input asp-for="Id" type="hidden" />
+
+    <input asp-for="ShortName" class="form-control" />
+    <input asp-for="FullName" class="form-control" />
+    <input asp-for="Address" class="form-control" />
+    <input asp-for="Phone" class="form-control" />
+    <input asp-for="Email" class="form-control" />
+    <input asp-for="Website" class="form-control" />
+
+    <button class="btn btn-primary">Сохранить</button>
+
+</form>

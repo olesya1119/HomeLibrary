@@ -1,0 +1,11 @@
+﻿@model Store.Models.Publisher
+
+<h2>@Model.FullName</h2>
+
+<p>Короткое название: @Model.ShortName</p>
+<p>Адрес: @Model.Address</p>
+<p>Телефон: @Model.Phone</p>
+<p>Email: @Model.Email</p>
+<p>Сайт: @Model.Website</p>
+
+<a asp-action="Edit" asp-route-id="@Model.Id">Изменить</a>

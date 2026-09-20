@@ -1,0 +1,17 @@
+﻿@model Store.Models.Author
+
+<h2>Изменить автора</h2>
+
+<form asp-action="Edit" method="post">
+    <input asp-for="Id" type="hidden" />
+
+    <input asp-for="FirstName" class="form-control" />
+    <input asp-for="LastName" class="form-control" />
+    <input asp-for="MiddleName" class="form-control" />
+    <input asp-for="BirthDate" type="date" class="form-control" />
+    <input asp-for="DeathDate" type="date" class="form-control" />
+    <textarea asp-for="Description" class="form-control"></textarea>
+
+    <br />
+    <button class="btn btn-primary">Сохранить</button>
+</form>
